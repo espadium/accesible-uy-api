@@ -1,0 +1,56 @@
+# AccesibleUY - API
+
+A Grape on Rails project setup with all the tools for use as a server API:
+
+```
+# Basic
+Ruby 2.1.2
+Rails 4.1.1
+
+# API
+Grape
+
+# Database
+Postgres
+
+# Code sanity and tests
+Reek
+Rubocop
+RailsBestPractices
+Travis
+Capybara
+Rspec
+FactoryGirl
+
+# Front-end
+Haml
+Compass
+```
+
+## How to use this repo
+
+1. Clone it from Github
+2. Rename the origin remote on .git/config to point to your new empty project repo
+3. Configure all necessary files (see below)
+4. Edit this README (you probably wanna do this last to keep reading)
+5. Make your initial config commit
+6. That's it :)
+
+## Running the App
+1. `$ bundle`
+2. `$ rake db:migrate`
+3. `$ rails s`
+
+## Running utilities
+### Tests
+1. Run the spork DRB server: `$ spork`
+2. `$ rake spork`
+
+### Code analysis
+- `$ rake code_analysis`
+
+## Needed configuration
+
+- Change the .travis.yml file and config/database.travis.yml file to point to your test database
+- Add a .env file with any necesary ENVIRONMENT variable you may need
+- Use config/database.yml.example to create config/database.yml with your postgres credentials
