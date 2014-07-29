@@ -2,11 +2,11 @@
 
 FactoryGirl.define do
   factory :place do
-    name "MyString"
-    address "MyString"
-    latt "MyString"
-    long "MyString"
-    author nil
-    client nil
+    name      { Faker::Address.street_address }
+    address   { Faker::Address.street_address }
+    latitude  { Faker::Address.latitude }
+    longitude { Faker::Address.longitude }
+    author    { FactoryGirl.create(:author) }
+    client    { FactoryGirl.create(:client) }
   end
 end

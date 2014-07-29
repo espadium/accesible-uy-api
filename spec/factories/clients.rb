@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :client do
-    token "MyString"
-    email "MyString"
-    domain_name "MyString"
+    token 'MyString'
+    email 'MyString'
+    domain_name 'MyString'
   end
 end

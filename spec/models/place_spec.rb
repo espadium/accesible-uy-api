@@ -1,5 +1,17 @@
 require 'spec_helper'
 
 describe Place do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'valid' do
+    subject { FactoryGirl.build :place }
+    it { should be_valid }
+  end
+
+  describe 'invalid' do
+    %i(name latitude logitude address author client).each do |field|
+      context "missing #{field}" do
+        subject { FactoryGirl.build :place, name: nil }
+        it { should be_invalid }
+      end
+    end
+  end
 end
