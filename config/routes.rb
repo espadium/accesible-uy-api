@@ -1,3 +1,3 @@
 AccesibleUYAPI::Application.routes.draw do
-  mount API => '/'
+  mount AccesibleUy::API => '/api/'
 end
