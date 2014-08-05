@@ -12,5 +12,12 @@ module AccesibleUy
         Place.limit(40)
       end
     end
+
+    resource :places do
+      desc 'Returns a list of places'
+      get '/near/:lat/:long' do
+        Place.near(params[:lat], params[:long]).limit(40)
+      end
+    end
   end
 end
