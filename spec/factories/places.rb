@@ -8,5 +8,14 @@ FactoryGirl.define do
     longitude { Faker::Address.longitude }
     author    { FactoryGirl.create(:author) }
     client    { FactoryGirl.create(:client) }
+
+    factory :near_place do
+      before :create, :build do |instance|
+        instance.update_attributes(
+          latitude:  instance.latitude + Place::NEAR_DISTANCE,
+          longitude: instance.longitude + Place::NEAR_DISTANCE
+        )
+      end
+    end
   end
 end
