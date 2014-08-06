@@ -15,14 +15,11 @@ describe Place do
     end
   end
 
-  describe 'near' do
-    subject { Place.near(0,0) }
+  describe 'reverse geocode' do
+    subject { FactoryGirl.create(:place, address: nil) }
 
-    it { should be_empty }
-
-    context 'with places near by' do
-      before { FactoryGirl.create_list(:near_place, 5, latitude: 1, longitude: 1) }
-      it { should_not be_empty }
+    it 'should geocode the address' do
+      subject.address.should_not be_nil
     end
   end
 end
