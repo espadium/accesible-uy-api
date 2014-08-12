@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :author do
-    email "MyString"
+    email 'MyString'
   end
 end

@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 20140723005222) do
   create_table "places", force: true do |t|
     t.string   "name"
     t.string   "address"
-    t.string   "latt"
-    t.string   "long"
+    t.string   "latitude"
+    t.string   "longitude"
     t.integer  "author_id"
     t.integer  "client_id"
     t.datetime "created_at"
