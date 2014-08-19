@@ -3,7 +3,6 @@
 FactoryGirl.define do
   factory :place do
     name      { Faker::Address.street_address }
-    address   { Faker::Address.street_address }
     latitude  { Faker::Address.latitude }
     longitude { Faker::Address.longitude }
     author    { FactoryGirl.create(:author) }

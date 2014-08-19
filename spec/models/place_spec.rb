@@ -14,4 +14,12 @@ describe Place do
       end
     end
   end
+
+  describe 'reverse geocode' do
+    subject { FactoryGirl.create(:place, address: nil) }
+
+    it 'should geocode the address' do
+      subject.address.should_not be_nil
+    end
+  end
 end
