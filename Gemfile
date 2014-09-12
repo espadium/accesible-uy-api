@@ -47,6 +47,10 @@ gem 'rails_12factor', group: :production
 # Geolocation
 gem 'geocoder'
 
+gem 'uglifier'
+gem 'sass-rails'
+gem 'compass-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
