@@ -6,6 +6,17 @@ module AccesibleUy
     version 'v1', using: :path
     add_swagger_documentation
 
+    helpers do
+      def current_user
+        # TODO: Add real authentication
+        true
+      end
+
+      def authenticate!
+        error!('401 Unauthorized', 401) unless current_user
+      end
+    end
+
     resource :places do
 
       desc "Return a place."
@@ -26,6 +37,17 @@ module AccesibleUy
       desc 'Returns a list of places'
       get '/near/:lat/:long' do
         Place.near(params[:lat], params[:long]).limit(20)
+      end
+
+      desc "Creates a place."
+      params do
+        requires :lat, type: String, desc: "The latitude string."
+        requires :lon, type: String, desc: "The longitude string."
+        requires :name, type: String, desc: "The name of the place."
+      end
+      post do
+        authenticate!
+        Place.create_from_params(params).errors
       end
     end
   end
