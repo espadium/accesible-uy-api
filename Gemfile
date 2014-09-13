@@ -23,11 +23,9 @@ group :development do
 end
 
 group :development, :test do
-  gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'spork-rails'
   gem 'thin'
-  gem 'faker'
 end
 
 group :test do
@@ -37,6 +35,8 @@ group :test do
 end
 
 # Code analysis tools
+gem 'faker'
+gem 'factory_girl_rails'
 
 gem 'reek'
 gem 'rails_best_practices'
