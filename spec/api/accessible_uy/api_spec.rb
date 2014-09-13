@@ -1,6 +1,25 @@
 require 'spec_helper'
 
 describe AccesibleUy::API do
+  describe 'GET /api/v1/places/:id' do
+    before { get '/api/v1/places' }
+
+    it 'returns an empty hash' do
+      JSON.parse(response.body).should == []
+    end
+
+    context 'with places data' do
+      before do
+        @place = FactoryGirl.create(:place)
+        get "/api/v1/places/#{@place.id}"
+      end
+
+      it 'returns the place' do
+        JSON.parse(response.body)["id"].should be(@place.id)
+      end
+    end
+  end
+
   describe 'GET /api/v1/places' do
     before { get '/api/v1/places' }
 
