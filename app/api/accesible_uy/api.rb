@@ -47,7 +47,7 @@ module AccesibleUy
       end
       post do
         authenticate!
-        Place.create_from_params(params).errors
+        Place.create_from_params(params)
       end
     end
   end
