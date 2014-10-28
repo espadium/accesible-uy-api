@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140730040053) do
+ActiveRecord::Schema.define(version: 20141021220556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,11 @@ ActiveRecord::Schema.define(version: 20140730040053) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "accesibility_type"
+    t.integer  "place_id"
   end
+
+  add_index "categories", ["place_id"], name: "index_categories_on_place_id", using: :btree
 
   create_table "clients", force: true do |t|
     t.string   "token"

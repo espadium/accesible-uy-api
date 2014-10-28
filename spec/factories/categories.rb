@@ -2,6 +2,11 @@
 
 FactoryGirl.define do
   factory :category do
-    name 'MyString'
+    name              { 'MyString' }
+    accesibility_type { 'visual' }
+
+    trait :with_place do
+      place { FactoryGirl.create(:place) }
+    end
   end
 end
