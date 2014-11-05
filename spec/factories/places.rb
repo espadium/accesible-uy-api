@@ -7,5 +7,17 @@ FactoryGirl.define do
     longitude { Faker::Address.longitude }
     author    { FactoryGirl.create(:author) }
     client    { FactoryGirl.create(:client) }
+
+    ignore do
+      categories_count 5
+    end
+
+    trait :with_categories do
+      after(:create, :build) do |place, evaluator|
+        evaluator.categories_count.times do
+          place.categories << FactoryGirl.create(:category)
+        end
+      end
+    end
   end
 end
