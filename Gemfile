@@ -23,6 +23,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'byebug'
   gem 'rspec-rails'
   gem 'spork-rails'
   gem 'thin'
@@ -50,6 +51,8 @@ gem 'geocoder'
 gem 'uglifier'
 gem 'sass-rails'
 gem 'compass-rails'
+
+gem 'roar'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

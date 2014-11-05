@@ -1,6 +1,7 @@
 class Place < ActiveRecord::Base
   belongs_to :author
   belongs_to :client
+  has_many :categories
 
   reverse_geocoded_by :latitude, :longitude
   after_validation :reverse_geocode

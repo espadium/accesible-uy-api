@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Place do
+  it { should have_many :categories }
+
   describe 'valid' do
     subject { FactoryGirl.build :place }
     it { should be_valid }

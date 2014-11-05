@@ -25,7 +25,7 @@ module AccesibleUy
       end
       route_param :id do
         get do
-          Place.find(params[:id])
+          present Place.find(params[:id]), with: Entities::PlaceEntity
         end
       end
 

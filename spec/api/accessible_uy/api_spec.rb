@@ -52,7 +52,7 @@ describe AccesibleUy::API do
 
     context 'with places data' do
       before do
-        @place = FactoryGirl.create(:place)
+        @place = FactoryGirl.create(:place, :with_categories)
         get "/api/v1/places/#{@place.id}"
       end
 
